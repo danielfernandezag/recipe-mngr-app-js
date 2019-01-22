@@ -1,0 +1,40 @@
+{
+	"name": "recipes-manager",
+	"version": "1.0.0",
+	"description": "Recipe manager app that shows how to manipulate the DOM and user interactions with vanilla JavaScript, Babel and Webpack in a very straight-forward and simple way.",
+	"main": "index.js",
+	"scripts": {
+		"test": "test",
+		"serve": "live-server public",
+		"webpack": "webpack",
+		"build": "babel src/index.js --out-file public/scripts/main.bundle.js --presets env --watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/danielfernandezag/recipe-mngr-app-js.git"
+	},
+	"keywords": [
+		"JavaScript",
+		"DOM",
+		"Web",
+		"Development",
+		"Babel",
+		"Webpack",
+		"Modules",
+		"ES6+"
+	],
+	"author": "Julio Daniel Fernandez Aguirre",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/danielfernandezag/recipe-mngr-app-js/issues"
+	},
+	"homepage": "https://github.com/danielfernandezag/recipe-mngr-app-js#readme",
+	"dependencies": {
+		"babel": "^6.23.0",
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.7.0",
+		"live-server": "^1.2.1",
+		"webpack": "^4.29.0",
+		"webpack-cli": "^3.2.1"
+	}
+}
