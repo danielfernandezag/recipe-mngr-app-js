@@ -1,10 +1,210 @@
 * {
 	box-sizing: border-box;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Muli', Tahoma, Geneva, Verdana, sans-serif;
 	padding: 0;
 	margin: 0;
+	color: #000;
 }
 
-h1 {
-	padding: 1rem;
+html,
+body {
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	min-width: 100%;
+	max-height: 100%;
+	max-width: 100%;
+	/* background: rgb(28, 0, 36);
+  background: linear-gradient(180deg, rgba(28, 0, 36, 1) 0%, rgba(86, 9, 121, 1) 35%, rgba(149, 0, 255, 1) 100%); */
+	background: #d4b746;
+	background: linear-gradient(180deg, #d4b746 0%, #edcd4d 50%, #f3d250 100%);
+}
+
+/******************************************************* LOGIN PAGE *************************************************/
+div#login-container {
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	min-width: 100%;
+	max-height: 100%;
+	max-width: 100%;
+	display: grid;
+	display: -ms-grid;
+	grid-template-columns: [left-column] 30% [middle-column] 40% [right-column] 30%;
+	grid-template-rows: [upper-row] 10% [middle-up-row] 35% [middle-down-row] 40% [lower-row] 15%;
+	grid-gap: 0;
+	justify-items: stretch;
+	align-items: stretch;
+
+	/*  */
+	border: solid 1px white;
+}
+
+/*  */
+/* div#login-container div {
+	border: solid 1px cyan;
+} */
+
+div#login-logo {
+	grid-column: middle-column;
+	grid-row: middle-up-row / middle-down-row;
+	text-align: center;
+}
+div#login-logo img {
+	height: 100%;
+	cursor: pointer;
+}
+
+/*  */
+div#login-form {
+	grid-column: middle-column;
+	grid-row: middle-down-row / lower-row;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	align-content: space-between;
+	color: #313131;
+	-webkit-text-fill-color: #313131;
+	height: 100%;
+	width: 100%;
+}
+
+/* user */
+div#login-password,
+div#login-user {
+	text-align: center;
+	margin: 0.5rem 0;
+	padding: 0 1.5rem;
+}
+
+div#lbl-password,
+div#lbl-user {
+	padding: 0 2rem;
+	text-align: start;
+	width: 100%;
+	font-size: 1.3rem;
+}
+
+div#input-password,
+div#input-user {
+	background: #ffffff;
+	border-radius: 20px;
+	border: solid 1px #e9ba01;
+	width: 100%;
+	height: 3rem;
+	font-size: 1.4rem;
+	margin: 0.5rem 0;
+}
+
+div#input-password input,
+div#input-user input {
+	display: inline-block;
+	border: transparent;
+	background: transparent;
+	width: 80%;
+	font-size: 1.4rem;
+	line-height: 3rem;
+	padding: 0 1.4rem;
+	text-align: start;
+}
+
+div#input-password i,
+div#input-user i {
+	display: inline-block;
+	width: 20%;
+	cursor: pointer;
+}
+
+/* button */
+div#login-button {
+	text-align: center;
+}
+div#login-button button {
+	all: unset;
+	width: 50%;
+	height: 3rem;
+	background: #e9ba01;
+	border-radius: 20px;
+	font-size: 1.5rem;
+	color: #ffffff;
+	-webkit-text-fill-color: #ffffff;
+	cursor: pointer;
+}
+div#login-button button:hover {
+	background: #d4aa02;
+	font-size: 1.5125rem;
+	text-decoration: underline;
+}
+
+@media (min-width: 1px) and (max-width: 500px) {
+	div#login-container {
+		grid-template-columns: [left-column] 5% [middle-column] 90% [right-column] 5%;
+		grid-template-rows: [upper-row] 15% [middle-up-row] 40% [middle-down-row] 30% [lower-row] 15%;
+		/*  */
+		border: solid 1px white;
+	}
+}
+
+/******************************************************* MAIN PAGE **************************************************/
+
+div#main-container {
+	height: 100%;
+	width: 100%;
+	min-height: 100%;
+	min-width: 100%;
+	max-height: 100%;
+	max-width: 100%;
+	display: grid;
+	display: -ms-grid;
+	grid-template-columns: [left-column] 25% [right-column] 75%;
+	grid-template-rows: [upper-row] 10% [middle-up-row] 40% [middle-down-row] 40% [lower-row] 10%;
+	grid-gap: 0;
+	justify-items: stretch;
+	align-items: stretch;
+
+	/*  */
+	border: solid 1px white;
+}
+
+@media (min-width: 1px) and (max-width: 500px) {
+	div#main-container {
+		grid-template-columns: [left-column] 25% [right-column] 75%;
+		grid-template-rows: [upper-row] 10% [middle-up-row] 40% [middle-down-row] 40% [lower-row] 10%;
+	}
+}
+
+/*  */
+div#main-container div {
+	border: solid 1px cyan;
+}
+/*  */
+div#left-home {
+	grid-column: left-column / right-column;
+	grid-row: upper-row / middle-up-row;
+}
+/*  */
+div#left-filters {
+	grid-column: left-column / right-column;
+	grid-row: middle-up-row / middlw-down-row;
+}
+/*  */
+div#left-actions {
+	grid-column: left-column / right-column;
+	grid-row: middle-down-row / lower-row;
+}
+/*  */
+div#middle-title {
+	grid-column: right-column;
+	grid-row: upper-row / middle-up-row;
+}
+/*  */
+div#middle-container {
+	grid-column: right-column;
+	grid-row: middle-up-row / lower-row;
+}
+/*  */
+div#right-footer {
+	grid-column: left-column / end;
+	grid-row: lower-row;
+	background: red;
 }
