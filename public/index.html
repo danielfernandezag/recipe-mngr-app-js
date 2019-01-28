@@ -7,7 +7,9 @@
 		<link rel="shortcut icon" href="./images/favicon.ico" />
 		<meta name="theme-color" content="#e9ba01" />
 		<link rel="stylesheet" type="text/css" href="./index.css" />
+		<script src="./scripts/particles.js" defer></script>
 		<script src="./scripts/main.bundle.min.js" defer></script>
+		<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 		<!-- <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
 		<script>
 			// Initialize Firebase
@@ -25,7 +27,8 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
 		<title>Recipes Manager App</title>
 	</head>
-	<body>
+	<body id="body">
+		<div id="particles"></div>
 		<!-- ************************************   LOGIN  *************************************************** -->
 		<div id="login-container">
 			<div id="login-logo"><img src="./images/main-logo.png" alt="" /></div>
@@ -40,6 +43,7 @@
 				</div>
 				<div id="login-button"><button>login</button></div>
 			</div>
+			<div id="login-footer"></div>
 		</div>
 		<!-- ************************************   MAIN  *************************************************** -->
 		<div id="main-container">
