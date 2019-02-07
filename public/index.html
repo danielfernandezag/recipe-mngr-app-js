@@ -6,23 +6,13 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link rel="shortcut icon" href="./images/favicon.ico" />
 		<meta name="theme-color" content="#e9ba01" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="./index.css" />
+		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 		<script src="./scripts/particles.js" defer></script>
 		<script src="./scripts/main.bundle.min.js" defer></script>
 		<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-		<!-- <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
-		<script>
-			// Initialize Firebase
-			var config = {
-				apiKey: 'AIzaSyC48fghMdIX0-48krWLhWT2xIWFC7Zakj8',
-				authDomain: 'personal-mini-projects.firebaseapp.com',
-				databaseURL: 'https://personal-mini-projects.firebaseio.com',
-				projectId: 'personal-mini-projects',
-				storageBucket: '',
-				messagingSenderId: '684773986710'
-			};
-			firebase.initializeApp(config);
-		</script> -->
 		<link href="https://fonts.googleapis.com/css?family=Muli:300,400,400i,600,700" rel="stylesheet" />
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
 		<title>Recipes Manager App</title>
@@ -42,21 +32,68 @@
 					<div id="input-password"><input type="password" placeholder="password" /><i class="fas fa-eye"></i></div>
 				</div>
 				<div id="login-button"><button>login</button></div>
+				<div id="login-google">
+					<button><i class="fab fa-google"> </i> login with Google</button>
+				</div>
 			</div>
 			<div id="login-footer"></div>
 		</div>
 		<!-- ************************************   MAIN  *************************************************** -->
 		<div id="main-container">
 			<!--  -->
-			<div id="left-home">home</div>
+			<div id="left-home"><img id="home-image" src="./images/main-logo.png" alt="" /></div>
 			<div id="left-filters">filters</div>
-			<div id="left-actions">actions</div>
+			<div id="left-actions"><button id="add-action-btn">Add new recipe</button></div>
 			<!--  -->
-			<div id="middle-title">title</div>
-			<div id="middle-container">container</div>
+			<div id="middle-title">
+				<div id="search-input" class="card-content">
+					<div class="input-field col s12">
+						<input type="text" name="task" id="task" />
+						<label for="task">Search</label>
+					</div>
+				</div>
+			</div>
+			<div id="middle-container">
+				<h5 id="recipes-title">Recipes</h5>
+				<ul id="recipe-list-container" class="collection"></ul>
+			</div>
 			<!--  -->
-			<div id="right-footer">footer</div>
+			<div id="right-footer"><button id="logout-btn">logout</button></div>
 			<!--  -->
+		</div>
+		<!-- ************************************  MODALS  *************************************************** -->
+		<!-- MODAL LOGOUT -->
+		<div id="modal-logout" class="modal">
+			<div class="modal-content">
+				<span id="close-logout-modal" class="close">&times;</span>
+				<div class="card-content">
+					<span class="card-title">Logout</span>
+					<div class="row">
+						<div class="col s12">
+							<p>Are you sure you want to logout?</p>
+							<button class="btn">logout</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- MODAL ADD RECIPE -->
+		<div id="modal-add-recipe" class="modal">
+			<div class="modal-content">
+				<span id="close-add-modal" class="close">&times;</span>
+				<div class="card-content">
+					<span class="card-title">Task List</span>
+					<div class="row">
+						<form id="task-form">
+							<div class="input-field col s12">
+								<input type="text" name="task" id="task" />
+								<label for="task">New Task</label>
+							</div>
+							<input type="submit" value="Add Task" class="btn" />
+						</form>
+					</div>
+				</div>
+			</div>
 		</div>
 		<!-- ************************************  END  *************************************************** -->
 	</body>
